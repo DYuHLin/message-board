@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Mini Message Board</title>
+        <link rel="stylesheet" href="/stylesheets/style.css">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <head>
+    <body>
+        <header>
+            <h1>Message Board</h1>
+            <a class="git" href="https://github.com/DYuHLin/mini-message-board"><i class='bx bxl-github'></i></a>     
+        </header>
+
+        <main>
+            <a href="/new">Send Message</a>
+            <%if(messages.length > 0){ %>
+            <% messages.forEach(element => {%>
+                <div class="messages">
+                    <h3><%=element.user%></h3>
+                    <p><%=element.text%></p>
+                    <span><%=element.added%></span>
+                </div>
+            <%})%>
+            <%} else{%>
+                <p>There are no messages</p>
+            <%}%>
+        </main>
+    </body>
+</html>

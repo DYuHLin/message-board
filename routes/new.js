@@ -4,8 +4,6 @@ const messages = require('../Models/messages');
 const mongoose = require('mongoose');
 mongoose.set("strictQuery", false);
 
-const mongoDB = "mongodb+srv://damian:damian1216@cluster0.8eg71ou.mongodb.net/mini_message_board?retryWrites=true&w=majority";
-
 /* GET users listing. */
 router.get('/', function(req, res, next) {
   res.render('new', {title: 'Express'});

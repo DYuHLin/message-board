@@ -3,8 +3,9 @@ var router = express.Router();
 const message = require('../Models/messages');
 const mongoose = require('mongoose');
 mongoose.set("strictQuery", false);
+require('dotenv').config();
 
-const mongoDB = "mongodb+srv://damian:damian1216@cluster0.8eg71ou.mongodb.net/mini_message_board?retryWrites=true&w=majority";
+const mongoDB = process.env.MONGODB_CODE;
 
 let messages = [];
 

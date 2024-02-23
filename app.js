@@ -4,10 +4,11 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const mongoose = require('mongoose');
+require('dotenv').config();
 
 mongoose.set("strictQuery", false);
 
-const mongoDB = "mongodb+srv://damian:damian1216@cluster0.8eg71ou.mongodb.net/mini_message_board?retryWrites=true&w=majority";
+const mongoDB = process.env.MONGODB_CODE;
 
 var indexRouter = require('./routes/index');
 var newRouter = require('./routes/new');
